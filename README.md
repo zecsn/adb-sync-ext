@@ -11,8 +11,9 @@ Related Projects
 Before getting used to this, please review this list of projects that are
 somehow related to adb-sync-ext and may fulfill your needs better:
 
-* [adb-sync](https://github.com/google/adb-sync) is the original tool to synchronize
-  files between a PC and an Android device using the ADB (Android Debug Bridge).
+* [adb-sync](https://github.com/google/adb-sync) is the original tool to
+  synchronize files between a PC and an Android device using the ADB (Android
+  Debug Bridge).
 * [rsync](http://rsync.samba.org/) is a file synchronization tool for local
   (including FUSE) file systems or SSH connections. This can be used even with
   Android devices if rooted or using an app like
@@ -91,6 +92,14 @@ To copy all downloads from your device to your PC, type:
 
 ```
 adb-sync-ext --reverse /sdcard/Download/ ~/Downloads
+```
+
+To exclude certain files or directories use the --exclude flag (or shorthand -x)
+, glob patterns are allowed, and multiple with comma separation:
+
+```
+adb-sync --exclude *.jpg ~/Music /sdcard
+adb-sync --exclude SomeFolder,*.jpg ~/Music /sdcard
 ```
 
 ADB Channel

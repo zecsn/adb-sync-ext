@@ -1,15 +1,18 @@
-adb-sync
+adb-sync-ext
 ========
 
-adb-sync is a tool to synchronize files between a PC and an Android device
-using the ADB (Android Debug Bridge).
+adb-sync-ext is an extended version of [adb-sync](https://github.com/google/adb-sync)
+tool to synchronize files between a PC and an Android device using the ADB
+(Android Debug Bridge).
 
 Related Projects
 ================
 
 Before getting used to this, please review this list of projects that are
-somehow related to adb-sync and may fulfill your needs better:
+somehow related to adb-sync-ext and may fulfill your needs better:
 
+* [adb-sync](https://github.com/google/adb-sync) is the original tool to synchronize
+  files between a PC and an Android device using the ADB (Android Debug Bridge).
 * [rsync](http://rsync.samba.org/) is a file synchronization tool for local
   (including FUSE) file systems or SSH connections. This can be used even with
   Android devices if rooted or using an app like
@@ -55,10 +58,10 @@ PC Side
   distribution, this should already be the case; if you used the SDK, you
   probably will have to add an entry to PATH in your ~/.profile file, log out
   and log back in.
-* `git clone https://github.com/google/adb-sync`
-* `cd adb-sync`
-* Copy or symlink the adb-sync script somewhere in your PATH. For example:
-  `cp adb-sync /usr/local/bin/`
+* `git clone https://github.com/google/adb-sync-ext`
+* `cd adb-sync-ext`
+* Copy or symlink the adb-sync-ext script somewhere in your PATH. For example:
+  `cp adb-sync-ext /usr/local/bin/`
 
 Usage
 =====
@@ -66,28 +69,28 @@ Usage
 To get a full help, type:
 
 ```
-adb-sync --help
+adb-sync-ext --help
 ```
 
 To synchronize your music files from ~/Music to your device, type one of:
 
 ```
-adb-sync ~/Music /sdcard
-adb-sync ~/Music/ /sdcard/Music
+adb-sync-ext ~/Music /sdcard
+adb-sync-ext ~/Music/ /sdcard/Music
 ```
 
 To synchronize your music files from ~/Music to your device, deleting files you
 removed from your PC, type one of:
 
 ```
-adb-sync --delete ~/Music /sdcard
-adb-sync --delete ~/Music/ /sdcard/Music
+adb-sync-ext --delete ~/Music /sdcard
+adb-sync-ext --delete ~/Music/ /sdcard/Music
 ```
 
 To copy all downloads from your device to your PC, type:
 
 ```
-adb-sync --reverse /sdcard/Download/ ~/Downloads
+adb-sync-ext --reverse /sdcard/Download/ ~/Downloads
 ```
 
 ADB Channel
@@ -117,12 +120,6 @@ Contributing
 ============
 
 Patches to this project are very welcome.
-
-Before sending a patch or pull request, we ask you to fill out one of the
-Contributor License Agreements:
-
-* [Google Individual Contributor License Agreement, v1.1](https://developers.google.com/open-source/cla/individual)
-* [Google Software Grant and Corporate Contributor License Agreement, v1.1](https://developers.google.com/open-source/cla/corporate)
 
 Disclaimer
 ==========
